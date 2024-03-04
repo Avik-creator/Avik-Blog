@@ -1,4 +1,4 @@
-import { Alert, Button, TextInput, Modal, Textarea } from "flowbite-react";
+import { Alert, Button, Modal, Textarea } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -99,7 +99,7 @@ export default function CommentSection({ postId }: { postId: string }) {
         c._id === comment ? { ...c, content: editedContent } : c
       );
 
-      setComments((prevComments: any) => [...updatedComments]);
+      setComments(() => [...updatedComments]);
     } catch (error: any) {
       console.log(error.message);
     }
@@ -116,7 +116,6 @@ export default function CommentSection({ postId }: { postId: string }) {
         method: "DELETE",
       });
       if (res.ok) {
-        const data = await res.json();
         setComments(comments.filter((comment) => comment._id !== commentId));
       }
     } catch (error: any) {

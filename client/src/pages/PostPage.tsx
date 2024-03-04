@@ -18,7 +18,7 @@ interface Post {
 export default function PostPage() {
   const { postSlug } = useParams();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [, setError] = useState(false);
   const [recentPosts, setRecentPosts] = useState<Array<Post>>([]);
   const [post, setPost] = useState<Post>({
     _id: "",

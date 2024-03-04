@@ -81,7 +81,7 @@ export default function UpdatePost() {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setImageUploadProgress(Number(progress.toFixed(0)));
         },
-        (error) => {
+        () => {
           setImageUploadError("Image upload failed");
           setImageUploadProgress(null);
         },
@@ -156,7 +156,6 @@ export default function UpdatePost() {
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
           <FileInput
-            type="file"
             accept="image/*"
             // onChange={(e) => setFile(e.target.files[0])}
             onChange={(e) => {
@@ -198,7 +197,6 @@ export default function UpdatePost() {
           value={formData.content}
           placeholder="Write something..."
           className="h-72 mb-12"
-          required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
           }}

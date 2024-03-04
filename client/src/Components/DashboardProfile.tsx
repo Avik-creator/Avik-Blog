@@ -1,4 +1,4 @@
-import { Alert, Button, TextInput, Modal, ModalBody } from "flowbite-react";
+import { Alert, Button, TextInput, Modal } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useEffect, useRef, useState, ChangeEvent, ReactElement } from "react";
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ import {
   uploadBytesResumable,
   UploadTaskSnapshot,
 } from "firebase/storage";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import {
@@ -26,12 +26,6 @@ import { useDispatch } from "react-redux";
 
 import "react-circular-progressbar/dist/styles.css";
 
-interface User {
-  username: string;
-  email: string;
-  profilePicture: string;
-}
-
 interface formData {
   username: string;
   email: string;
@@ -40,7 +34,6 @@ interface formData {
 }
 
 export default function DashProfile(): ReactElement {
-  const navigate = useNavigate();
   const { currentUser, error, loading } = useSelector(
     (state: any) => state.user
   );
@@ -188,7 +181,7 @@ export default function DashProfile(): ReactElement {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setImageFileUploadProgress(Number(progress.toFixed(0)));
       },
-      (error) => {
+      () => {
         setImageFileUploadError(
           "Could not upload image (File must be less than 2MB)"
         );
