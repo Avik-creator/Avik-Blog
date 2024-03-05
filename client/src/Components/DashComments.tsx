@@ -1,4 +1,4 @@
-import { Modal, Table, Button } from "flowbite-react";
+import { Modal, Table, Button, Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
@@ -20,10 +20,13 @@ export default function DashComments() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [commentIdToDelete, setCommentIdToDelete] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const fetchComments = async () => {
+      setIsLoading(true);
       try {
         const res = await fetch(`/api/comment/getcomments`);
+
         const data = await res.json();
         if (res.ok) {
           setComments(data.comments);
@@ -33,6 +36,8 @@ export default function DashComments() {
         }
       } catch (error: any) {
         console.log(error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
     if (currentUser.isAdmin) {
@@ -65,6 +70,7 @@ export default function DashComments() {
 
     //for Fetching Post Names: // api/post/getposts
     const fetchPostNames = async () => {
+      setIsLoading(true);
       const newPostNameState: Record<string, string> = {};
       for (const comment of comments) {
         if (!usernames[comment.postId]) {
@@ -78,6 +84,8 @@ export default function DashComments() {
             }
           } catch (error: any) {
             console.log(error.message);
+          } finally {
+            setIsLoading(false);
           }
         }
       }
@@ -151,7 +159,12 @@ export default function DashComments() {
 
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
-      {currentUser.isAdmin && comments.length > 0 ? (
+      {isLoading && (
+        <div className="flex justify-center items-center min-h-screen">
+          <Spinner size="xl" />
+        </div>
+      )}
+      {!isLoading && currentUser.isAdmin && comments.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
