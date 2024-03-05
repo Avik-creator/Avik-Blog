@@ -52,8 +52,8 @@ This project is a full-fledged blog application built using the MERN stack (Mong
 
 5. **Access the application:**
 
-   ## Open your browser and navigate to http://localhost:5173 - For Frontend.
-   ## The Backend is running by default on port 3000.
+   * Open your browser and navigate to http://localhost:5173 - For Frontend.
+   * The Backend is running by default on port 3000.
 
 
 **Contributing:**
