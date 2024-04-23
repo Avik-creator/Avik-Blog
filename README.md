@@ -49,8 +49,14 @@ This project is a full-fledged blog application built using the MERN stack (Mong
    ```
 
 
+5. **Images of the Application:**
+<img width="1443" alt="Screenshot 2024-04-23 at 12 21 21 PM" src="https://github.com/Avik-creator/Avik-Blog/assets/77090462/584478cd-d202-4fda-bde1-146ebe1fcaac">
 
-5. **Access the application:**
+<img width="1443" alt="Screenshot 2024-04-23 at 12 22 24 PM" src="https://github.com/Avik-creator/Avik-Blog/assets/77090462/44ede6ae-b2fc-4e9f-ba9b-137dc908b9ba">
+
+<img width="1441" alt="Screenshot 2024-04-23 at 12 22 41 PM" src="https://github.com/Avik-creator/Avik-Blog/assets/77090462/e9fb5d4b-51ec-4adf-8074-44bd8e1054af">
+
+6. **Access the application:**
 
    * Open your browser and navigate to http://localhost:5173 - For Frontend.
    * The Backend is running by default on port 3000.
