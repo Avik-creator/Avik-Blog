@@ -61,6 +61,7 @@ This project is a full-fledged blog application built using the MERN stack (Mong
 <img width="1443" alt="Screenshot 2024-04-23 at 12 22 24 PM" src="https://github.com/Avik-creator/Avik-Blog/assets/77090462/44ede6ae-b2fc-4e9f-ba9b-137dc908b9ba">
 
 <img width="1441" alt="Screenshot 2024-04-23 at 12 22 41 PM" src="https://github.com/Avik-creator/Avik-Blog/assets/77090462/e9fb5d4b-51ec-4adf-8074-44bd8e1054af">
+
 **Contributing:**
 
 We welcome contributions to this project! Please refer to the CONTRIBUTING.md file for guidelines on how to contribute code, report issues, and participate in discussions.
