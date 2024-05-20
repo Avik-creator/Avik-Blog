@@ -7,7 +7,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://avik-blog-api.vercel.app",
-        secure: false,
+        secure: true,
       },
     },
   },
